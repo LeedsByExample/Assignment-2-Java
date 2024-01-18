@@ -46,6 +46,32 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+
+        //String nameOutput = "Name: " + name + System.lineSeparator();
+//        if(getName().isBlank()) {
+//            setName("Data not available");
+//        }
+
+
+//        if(employer.getValue().isBlank()) {
+//            setEmployer("Data not available");
+//        }
+
+
+        return System.lineSeparator() +
+                "ID: " + getId() + System.lineSeparator() +
+                "Name: " + (getName() == null || getName().isEmpty() ? "Data not available" : getName()) + System.lineSeparator() +
+                "Employer: " + (employer.getValue() == null || employer.getValue().isEmpty() ? "Data not available" : getEmployer()) + System.lineSeparator() +
+                "Location: " + (location.getValue() == null || location.getValue().isEmpty() ? "Data not available" : getLocation()) + System.lineSeparator() +
+                "Position Type: " + (positionType.getValue() == null || positionType.getValue().isEmpty() ? "Data not available" : getPositionType()) + System.lineSeparator() +
+                "Core Competency: " + (coreCompetency.getValue() == null || coreCompetency.getValue().isEmpty() ? "Data not available" : getCoreCompetency()) + System.lineSeparator();
+    }
+    //QUESTION: why can't i do getEmployer.isBlank()? but works fine if returning getEmployer? or can do employer.getValue.isBlank()?
+    //getPositionType().toString().isBlank() vs.
+    //positionType.getValue().isBlank()?
+    //okay wtf is the point of .isBlank() if it results in a NullPointerException if its passed a null value?? isnt it supposed to check for that?!?!
 
     // TODO (DONE): Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
