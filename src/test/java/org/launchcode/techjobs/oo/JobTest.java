@@ -41,8 +41,8 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertTrue(testJob.toString().startsWith(System.lineSeparator()));
-        assertTrue(testJob.toString().endsWith(System.lineSeparator()));
+        assertTrue(testJob.toString().startsWith("\n"));
+        assertTrue(testJob.toString().endsWith("\n"));
     }
     //unsure if line separator should be in quotes or not
 
@@ -50,13 +50,13 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String expectedOutput = System.lineSeparator() +
-                "ID: " + testJob.getId() + System.lineSeparator() +
-                "Name: " + testJob.getName() + System.lineSeparator() +
-                "Employer: " + testJob.getEmployer() + System.lineSeparator() +
-                "Location: " + testJob.getLocation() + System.lineSeparator() +
-                "Position Type: " + testJob.getPositionType() + System.lineSeparator() +
-                "Core Competency: " + testJob.getCoreCompetency() + System.lineSeparator();
+        String expectedOutput = "\n" +
+                "ID: " + testJob.getId() + "\n" +
+                "Name: " + testJob.getName() + "\n" +
+                "Employer: " + testJob.getEmployer() + "\n" +
+                "Location: " + testJob.getLocation() + "\n" +
+                "Position Type: " + testJob.getPositionType() + "\n" +
+                "Core Competency: " + testJob.getCoreCompetency() + "\n";
 
         assertEquals(expectedOutput, testJob.toString());
     }
@@ -65,29 +65,17 @@ public class JobTest {
     public void testToStringHandlesEmptyField() {
         Job emptyFieldJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(null));
 
-        String expectedOutput = System.lineSeparator() +
-                "ID: " + emptyFieldJob.getId() + System.lineSeparator() +
-                "Name: " + emptyFieldJob.getName() + System.lineSeparator() +
-                "Employer: " + emptyFieldJob.getEmployer() + System.lineSeparator() +
-                "Location: " + emptyFieldJob.getLocation() + System.lineSeparator() +
-                "Position Type: " + emptyFieldJob.getPositionType() + System.lineSeparator() +
-                "Core Competency: Data not available" + System.lineSeparator();
+        String expectedOutput = "\n" +
+                "ID: " + emptyFieldJob.getId() + "\n" +
+                "Name: " + emptyFieldJob.getName() + "\n" +
+                "Employer: " + emptyFieldJob.getEmployer() + "\n" +
+                "Location: " + emptyFieldJob.getLocation() + "\n" +
+                "Position Type: " + emptyFieldJob.getPositionType() + "\n" +
+                "Core Competency: Data not available" + "\n";
 
         assertEquals(expectedOutput, emptyFieldJob.toString());
     }
 
-//    @Test
-//    public void testToStringWithEmptyJob() {
-//        Job emptyJob = new Job();
-//
-//        String expectedOutput = "OOPS! This job does not seem to exist.";
-//
-//        assertEquals(expectedOutput, emptyJob.toString());
-//    }
-//this test is optional, add it if you have time
-
-    //
-    //    (Optional) If a Job object ONLY contains data for the id field, the method should return, “OOPS! This job does not seem to exist.”
 }
 
 //still need to test equals method

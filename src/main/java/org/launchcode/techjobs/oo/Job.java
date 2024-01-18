@@ -60,13 +60,13 @@ public class Job {
 //        }
 
 
-        return System.lineSeparator() +
-                "ID: " + getId() + System.lineSeparator() +
-                "Name: " + (getName() == null || getName().isEmpty() ? "Data not available" : getName()) + System.lineSeparator() +
-                "Employer: " + (employer.getValue() == null || employer.getValue().isEmpty() ? "Data not available" : getEmployer()) + System.lineSeparator() +
-                "Location: " + (location.getValue() == null || location.getValue().isEmpty() ? "Data not available" : getLocation()) + System.lineSeparator() +
-                "Position Type: " + (positionType.getValue() == null || positionType.getValue().isEmpty() ? "Data not available" : getPositionType()) + System.lineSeparator() +
-                "Core Competency: " + (coreCompetency.getValue() == null || coreCompetency.getValue().isEmpty() ? "Data not available" : getCoreCompetency()) + System.lineSeparator();
+        return "\n" +
+                "ID: " + getId() + "\n" +
+                "Name: " + (getName() == null || getName().isEmpty() ? "Data not available" : getName()) + "\n" +
+                "Employer: " + (employer.getValue() == null || employer.getValue().isEmpty() ? "Data not available" : getEmployer()) + "\n" +
+                "Location: " + (location.getValue() == null || location.getValue().isEmpty() ? "Data not available" : getLocation()) + "\n" +
+                "Position Type: " + (positionType.getValue() == null || positionType.getValue().isEmpty() ? "Data not available" : getPositionType()) + "\n" +
+                "Core Competency: " + (coreCompetency.getValue() == null || coreCompetency.getValue().isEmpty() ? "Data not available" : getCoreCompetency()) + "\n";
     }
     //QUESTION: why can't i do getEmployer.isBlank()? but works fine if returning getEmployer? or can do employer.getValue.isBlank()?
     //getPositionType().toString().isBlank() vs.
